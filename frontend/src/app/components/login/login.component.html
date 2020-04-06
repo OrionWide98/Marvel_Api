@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="heroes">
+            <span class="label-heroes">Heroes</span>    
+        <img src="assets/img/bg-login.png" srcset="assets/img/bg-login@2x.png 2x, assets/img/bg-login@3x.png 3x" class="Bg-Login"/> 
+    </div>
+
+    <div class="login">
+        <div class="saudacoes">
+            <label>Saudações terráqueo!</label>
+        </div>
+
+        <div class="mensagem">
+            <label >Estamos muito felizes em te ver por aqui!</label>
+        </div>
+
+        <div class="username">
+            <label>Usuário</label><br>
+        </div>
+
+        <div>
+            <input class="credential" [(ngModel)]="user.UserName" placeholder="Username" required/>
+        </div>
+        <div class="password">
+            <label>Senha</label><br>
+        </div>
+
+        <div>
+            <input class="credential" type="password" [(ngModel)]="user.Password" placeholder="Password" required/>
+        </div>
+
+        <div>
+            <button class="botaologin btn btn-primary" (click)="OnPress()"><label class="entrar">Entrar</label></button>
+        </div>
+
+        <div>{{status}}</div>
+    </div>
+</div>

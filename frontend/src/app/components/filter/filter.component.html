@@ -1,0 +1,29 @@
+<div class="header">
+    <img src="../../../assets/img/menu-hamburger.png"
+    class="hamburger"> 
+
+    <label class="label-heroes">HEROES</label>
+    <img (click)="logOut()" src="../../../assets/img/logout-24.png" class="logout">
+</div>
+
+
+
+<div class="container-search">
+    <div>
+        <input [(ngModel)]="filtro" class="input-filter" type="text" placeholder="Encontre seu herói favorito aqui">
+    </div>
+    <div>
+        <button class="pesquisar btn btn-primary" (click)="onSearch()" type="submit"><label class="pesquisar-label">Buscar</label></button>
+    </div>
+</div>
+
+<div *ngIf="this.status">
+    <div *ngFor="let personagem of personagens">
+        <div *ngIf="personagem.Nome" class="container-result" (click)="storeData(personagem); onPress()">
+            <img src= {{personagem?.UrlImagem}} class="result-img">
+            <div>
+                <label class="result-name">{{personagem?.Nome}}</label>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+    <img (click)="back()" src="../../../assets/img/arrow-left-24.png"
+    class="back">
+
+    <label class="label-heroes">HEROES</label>
+    <img (click)="logOut()" src="../../../assets/img/logout-24.png" class="logout">
+</div>
+
+<div>
+    <img src= {{personagem?.UrlImagem}} class="personagem-img">
+    <img src="../../../assets/img/marvelweb.jpg"
+     class="banner">
+</div>
+
+<div class="container-info">
+    <label class="personagem-nome"> {{personagem?.Nome}} </label>
+    <label class="personagem-descricao">{{personagem?.Descricao}}</label>
+    <a href={{personagem.UrlWiki}} class="personagem-wiki btn btn-primary" target="_blank"><label class="label-wiki">Wiki</label></a>
+</div>

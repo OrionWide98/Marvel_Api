@@ -1,0 +1,7 @@
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../src/assets/colors/colors.scss';
+@import '../src/assets/fonts/scss/modules/fonts.scss';
+
+body {
+    background-color: $dark-grey;
+}
