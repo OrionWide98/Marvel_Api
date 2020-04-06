@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Api.Gateway;
 using Core.Interfaces;
 using Core.UseCases;
-using Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,11 +30,6 @@ namespace Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
-            services.AddDbContext<MarvelApiContext>(options => options
-            .UseSqlServer(Configuration.GetConnectionString("MarvelDatabase"),
-                 x => x.MigrationsAssembly("Migrations"))
-            .UseLazyLoadingProxies());
 
             services.AddCors(options =>
             {   

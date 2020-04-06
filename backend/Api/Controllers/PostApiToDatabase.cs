@@ -3,7 +3,6 @@ using System;
 using Api.Gateway;
 using Core.Entities;
 using Core.Interfaces;
-using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
@@ -14,13 +13,10 @@ namespace Api.Controllers
     [Route("[controller]")]
     public class PostApiToDatabase : Controller
     {
-        private readonly MarvelApiContext _marvelapicontext;
         private readonly PostApiToDatabaseGateway _gateway;
 
-        public PostApiToDatabase(MarvelApiContext marvelApiContext,
-            PostApiToDatabaseGateway gateway)
+        public PostApiToDatabase(PostApiToDatabaseGateway gateway)
         {
-            _marvelapicontext = marvelApiContext;
             _gateway = gateway;
         }
 
@@ -42,12 +38,10 @@ namespace Api.Controllers
                   result.thumbnail.extension;
                 personagem.UrlWiki = result.urls[1].url;
 
-                _marvelapicontext.Personagens.Add(personagem);
                 personagens.Add(personagem);
             }
 
-            _marvelapicontext.SaveChanges();
             return Ok(personagens);
         }
     }
-    }
+}
