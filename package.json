@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "browser": "chrome",
   "scripts": {
-    "heroku-postbuild": "ng build --prod",
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
+    "postinstall": "ng build --aot --prod",
     "test": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e"
