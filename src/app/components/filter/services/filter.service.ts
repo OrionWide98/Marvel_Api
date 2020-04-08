@@ -9,7 +9,7 @@ import { Personagem } from '../models/Personagem';
 export class FilterService {
   public getPersonagem(filtro: string): Promise<any> {
     return new Promise<any>((resolve, reject) => {
-      const url = 'https://localhost:5001/PostApiToDatabase';
+      const url = 'https://isaac-marvel-api.herokuapp.com/PostApiToDatabase';
 
       this.http.get<Personagem>(`${url}?nome=${filtro}`)
         .subscribe((personagemApi) => {
